@@ -7,11 +7,13 @@
       name="Manuel" 
       phone-number="01234 56789" 
       email-address="manuel@email.com"
+      is-favorite="1"
     ></friend-contact>
     <friend-contact 
       name="Julie" 
       phone-number="09876 56789" 
       email-address="julie@email.com"
+      is-favorite="0"
     ></friend-contact>
   </ul>
 </template>
