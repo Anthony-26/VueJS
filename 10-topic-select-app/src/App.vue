@@ -4,7 +4,7 @@
       :topic-title="activeTopic && activeTopic.title"
       :text="activeTopic && activeTopic.fullText"
     ></active-element>
-    <knowledge-base :topics="topics" @select-topic="activateTopic"></knowledge-base>
+    <knowledge-base @select-topic="activateTopic"></knowledge-base>
   </div>
 </template>
 
@@ -28,14 +28,29 @@ export default {
           fullText:
             'With components, you can split logic (and markup) into separate building blocks and then combine those building blocks (and re-use them) to build powerful user interfaces.',
         },
-      ],
+      ], 
       activeTopic: null,
+    };
+  },
+  provide() {
+    return {
+      topics: this.topics,
     };
   },
   methods: {
     activateTopic(topicId) {
       this.activeTopic = this.topics.find((topic) => topic.id === topicId);
     },
+  },
+  mounted() {
+    setTimeout(() => {
+      this.topics.push({
+        id: 'events',
+        title: 'Events',
+        description: 'Description',
+        fullText: 'Text',
+      })
+    }, 3000);
   },
 };
 </script>
