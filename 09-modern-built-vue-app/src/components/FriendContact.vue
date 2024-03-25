@@ -59,6 +59,6 @@ export default {
     toggleFavorite() {
       this.$emit('toggle-favorite', this.id);
     },
-  }
+  },
 }
 </script>
