@@ -26,8 +26,8 @@ export default {
   data() {
     return {
       activeUser: {
-        name: 'Maximilian Schwarzmüller',
-        description: 'Site owner and admin',
+        name: 'Anthony',
+        description: 'Training VueJS',
         role: 'admin',
       },
     };
