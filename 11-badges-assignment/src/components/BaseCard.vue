@@ -1,15 +1,29 @@
 <template>
   <div>
+    <header v-if="$slots.header">
+      <slot name="header">
+        <!--<h2>The default</h2>  If no values for slot header -->
+      </slot>
+    </header>
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
+  mounted() {
+    console.log(this.$slots.header);
+  }
 }
 </script>
 
 <style scoped>
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 div {
   margin: 2rem auto;
   max-width: 30rem;
